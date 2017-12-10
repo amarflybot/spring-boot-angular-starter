@@ -10,7 +10,11 @@ import { HomeComponent } from './home/home.component';
 
 const appRoutes: Routes = [
   { path: 'person', component: PersonTableComponent },
-  { path: 'home', component: HomeComponent }
+  { path: 'home', component: HomeComponent },
+  { path: '',
+    redirectTo: '/home',
+    pathMatch: 'full'
+  }
   /*,
   {
     path: 'heroes',
