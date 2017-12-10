@@ -17,7 +17,7 @@
     <description>Spring Boot Angular Starter Project</description>
 
     <modules>
-        <!--<module>frontend</module>-->
+        <module>frontend</module>
         <module>backend</module>
     </modules>
 
