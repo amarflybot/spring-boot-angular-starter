@@ -22,6 +22,14 @@ export class LoginService {
       });
   }
 
+  checkLogin() {
+    if (localStorage.getItem('currentUser')) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   logout() {
     // remove user from local storage to log user out
     localStorage.removeItem('currentUser');
