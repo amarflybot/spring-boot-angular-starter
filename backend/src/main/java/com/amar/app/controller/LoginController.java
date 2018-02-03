@@ -4,10 +4,7 @@ import com.amar.app.api.PersonRepository;
 import com.amar.app.service.ExternalAPIService;
 import org.apache.commons.codec.binary.Base64;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -16,6 +13,8 @@ import java.security.NoSuchAlgorithmException;
  * Created by amarendra on 03/02/18.
  */
 @RestController
+@RequestMapping("/api")
+@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 public class LoginController {
 
     private final PersonRepository personRepository;

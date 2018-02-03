@@ -8,14 +8,19 @@ import { PersonTableComponent } from './person-table/person-table.component';
 import {PersonServiceService} from './services/person-service.service';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import {LoginService} from './services/login.service';
+import {AuthGuard} from './services/auth.guard';
+import {AlertService} from './services/alert.service';
+import { LogoutComponent } from './logout/logout.component';
 
 const appRoutes: Routes = [
-  { path: 'person', component: PersonTableComponent },
-  { path: 'home', component: HomeComponent },
-  { path: '',
-    redirectTo: '/home',
-    pathMatch: 'full'
-  }
+  { path: '', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: 'person', component: PersonTableComponent, canActivate: [AuthGuard] },
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: 'logout', component: LogoutComponent, canActivate: [AuthGuard] },
+  { path: 'login', component: LoginComponent},
+  // otherwise redirect to home
+  { path: '**', redirectTo: '' }
   /*,
   {
     path: 'heroes',
@@ -34,7 +39,8 @@ const appRoutes: Routes = [
     AppComponent,
     PersonTableComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +51,7 @@ const appRoutes: Routes = [
       { enableTracing: true } // <-- debugging purposes only
     )
   ],
-  providers: [PersonServiceService],
+  providers: [AuthGuard, AlertService, PersonServiceService, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
