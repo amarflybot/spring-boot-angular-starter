@@ -28,15 +28,14 @@
     </properties>
 
     <scm>
-        <url>https://github.com/amar/spring-boot-maven-angular-starter/</url>
-        <connection>scm:git:https://github.com/amar/spring-boot-maven-angular-starter.git</connection>
-        <developerConnection>scm:git:git@github.com:amar/spring-boot-maven-angular-starter.git</developerConnection>
-        <tag>HEAD</tag>
+        <url>https://github.com/amarraja123/spring-boot-angular-starter</url>
+        <connection>scm:git:git@github.com:amarraja123/spring-boot-angular-starter.git</connection>
+        <developerConnection>scm:git:git@github.com:amarraja123/spring-boot-angular-starter.git</developerConnection>
     </scm>
 
     <issueManagement>
         <system>GitHub Issues</system>
-        <url>https://github.com/amar/spring-boot-maven-angular-starter/issues</url>
+        <url>https://github.com/amarraja123/spring-boot-angular-starter/issues</url>
     </issueManagement>
 
     <build>

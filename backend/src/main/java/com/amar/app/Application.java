@@ -42,13 +42,13 @@ public class Application {
                         .forEach( name -> {
                             addressRepository.save(new Address(name+"123", name));
                         });
-                final Person person = new Person("Amar");
+                final Person person = new Person("Amar", "Amar");
                 person.setAddress(address);
                 personRepository.save(person);
 
                 Arrays.asList("Vicky","Alka","123","456")
                         .forEach(name -> {
-                            Person person1 = new Person(name);
+                            Person person1 = new Person(name,name);
                             person1.setAddress(addressRepository.findOne(3l));
                             personRepository.save(person1);
                         });
@@ -56,12 +56,14 @@ public class Application {
                 for (int i = 0; i < 100; i++) {
                     final Address address1 = addressRepository
                             .save(new Address(dataFactory.getStreetName(), dataFactory.getCity()));
-                    Person person1 = new Person(dataFactory.getName());
+                    Person person1 = new Person(dataFactory.getFirstName(), dataFactory.getLastName());
                     person1.setAddress(address1);
                     personRepository.save(person1);
 
 
                 }
+
+                personRepository.findAll().forEach(System.out::println);
             }
         };
     }

@@ -21,7 +21,7 @@
         <dependency>
             <groupId>com.amar.starters.ngboot</groupId>
             <artifactId>frontend</artifactId>
-            <version>${project.parent.version}</version>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>org.fluttercode.datafactory</groupId>

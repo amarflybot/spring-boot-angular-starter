@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { PersonTableComponent } from './person-table/person-table.component';
 import {PersonServiceService} from './services/person-service.service';
 import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
 
 const appRoutes: Routes = [
   { path: 'person', component: PersonTableComponent },
@@ -32,7 +33,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     PersonTableComponent,
-    HomeComponent
+    HomeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

@@ -14,6 +14,8 @@ public class Person {
 
     private String name;
 
+    private String password;
+
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id")
     private Address address;
@@ -21,8 +23,17 @@ public class Person {
     public Person() {
     }
 
-    public Person(final String name) {
+    public Person(final String name, final String password) {
         this.name = name;
+        this.password = password;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(final String password) {
+        this.password = password;
     }
 
     public Long getId() {
@@ -54,6 +65,7 @@ public class Person {
         return "Person{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", password='" + password + '\'' +
                 '}';
     }
 }
