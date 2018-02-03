@@ -14,9 +14,9 @@ import {AlertService} from './services/alert.service';
 import { LogoutComponent } from './logout/logout.component';
 
 const appRoutes: Routes = [
-  { path: '', component: HomeComponent},
+  { path: '', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'person', component: PersonTableComponent, canActivate: [AuthGuard] },
-  { path: 'home', component: HomeComponent},
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'logout', component: LogoutComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent},
   // otherwise redirect to home
